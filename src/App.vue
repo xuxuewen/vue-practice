@@ -1,28 +1,34 @@
 <template>
-  <div :class="$style.div">
-    <ListPage />
+  <div :class="$style.main">
+
+    <!-- 组件A -->
+    <ComA />
+    <hr />
+    <!-- 组件B -->
+    <ComB />
   </div>
 </template>
-
 <script>
-import Vue from 'vue'
-import ListPage from './components/ListPage.vue';
-export default Vue.extend({
-  name:'app',
+import ComA from './ComA.vue';
+import ComB from './ComB.vue';
+export default {
+  name:'App',
   components:{
-    ListPage
+    ComA,
+    ComB
   },
-  data:()=>({
-    text:'这是一个vue的入口程序'
-  }),
-  mounted:()=>{
-    console.log('this')
+  data:function(){
+    return {
+
+    }
+  },
+  mounted:function(){
+    console.log(this.$root.$data)
   }
-})
+}
 </script>
-
 <style lang="less" module>
-  .div{
-  }
-</style>
+.main{
 
+}
+</style>
